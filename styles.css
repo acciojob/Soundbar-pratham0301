@@ -1,1 +1,21 @@
-/*  your css code here. If applicable */
+const buttons = document.querySelectorAll('.btn');
+const stopBtn = document.querySelector('.stop');
+const audios = document.querySelectorAll('audio');
+
+
+function stopAll() {
+  audios.forEach(audio => {
+    audio.pause();
+    audio.currentTime = 0;
+  });
+}
+
+buttons.forEach((button, index) => {
+  button.addEventListener('click', () => {
+    stopAll();
+    const audio = document.getElementById(`audio${index + 1}`);
+    if (audio) audio.play();
+  });
+});
+
+stopBtn.addEventListener('click', stopAll);
