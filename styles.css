@@ -1,21 +1,23 @@
-const buttons = document.querySelectorAll('.btn');
-const stopBtn = document.querySelector('.stop');
-const audios = document.querySelectorAll('audio');
-
-
-function stopAll() {
-  audios.forEach(audio => {
-    audio.pause();
-    audio.currentTime = 0;
-  });
+//your JS code here. If required.
+/*  your css code here. If applicable */
+* {
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(161, 100, 223);
+}
+#buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  min-height: 100vh;
 }
 
-buttons.forEach((button, index) => {
-  button.addEventListener('click', () => {
-    stopAll();
-    const audio = document.getElementById(`audio${index + 1}`);
-    if (audio) audio.play();
-  });
-});
-
-stopBtn.addEventListener('click', stopAll);
+.btn {
+  background-color: rgb(102, 51, 153);
+  color: white;
+  padding: 10px 20px;
+	cursor:pointer;
+}
